@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yum_health/interface/splash_screen.dart';
 import 'common/style.dart';
 
 void main() {
@@ -14,7 +15,6 @@ class MyApp extends StatelessWidget {
       title: 'YumHealth',
       theme: ThemeData(
         primaryColor: primaryColor,
-        textTheme: myTextTheme,
         colorScheme:
             ColorScheme.fromSwatch().copyWith(secondary: secondaryColor),
       ),
