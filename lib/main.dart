@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'common/style.dart';
 
 void main() {
   runApp(const MyApp());
