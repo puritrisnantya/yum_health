@@ -8,11 +8,12 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return AnimatedSplashScreen(
       duration: 5000,
       backgroundColor: primaryColor,
       splash: Image.asset(
-        'assets/pancake.jpg',
+        'images/logo.png',
       ),
       nextScreen: const LandingPage(),
     );
