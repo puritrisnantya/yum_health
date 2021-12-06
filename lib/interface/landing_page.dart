@@ -3,6 +3,7 @@ import 'package:yum_health/common/style.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
+  static const routeName = '/landing_page';
 
   @override
   Widget build(BuildContext context) {

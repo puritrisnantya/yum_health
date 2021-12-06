@@ -5,6 +5,7 @@ import 'package:yum_health/interface/landing_page.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
+  static const routeName = '/';
 
   @override
   Widget build(BuildContext context) {

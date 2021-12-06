@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:yum_health/interface/landing_page.dart';
 import 'package:yum_health/interface/splash_screen.dart';
+import 'package:yum_health/utils/navigation_bar_router.dart';
 import 'common/style.dart';
 
 void main() {
@@ -18,9 +20,11 @@ class MyApp extends StatelessWidget {
         colorScheme:
             ColorScheme.fromSwatch().copyWith(secondary: secondaryColor),
       ),
-      initialRoute: '/SplashScreen',
+      initialRoute: SplashScreen.routeName,
       routes: {
-        '/SplashScreen': (context) => const SplashScreen(),
+        SplashScreen.routeName: (context) => const SplashScreen(),
+        LandingPage.routeName: (context) => const LandingPage(),
+        NavigationBarRouter.routeName: (context) => const NavigationBarRouter(),
       },
     );
   }
