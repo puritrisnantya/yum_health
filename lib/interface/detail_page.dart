@@ -69,6 +69,28 @@ class DetailPage extends StatelessWidget {
                         child: Text(resep!.label, style: myTextTheme.headline6),
                       ),
                     ),
+                    const SizedBox(
+                      height: 18,
+                    ),
+                    Text(
+                      'Ingredients',
+                      style: myTextTheme.headline5,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Container(
+                      width: size.width,
+                      decoration: const BoxDecoration(
+                        color: Color(0xFFF1F1F1),
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text(resep!.ingredients,
+                            style: myTextTheme.subtitle1),
+                      ),
+                    ),
                   ],
                 ),
               ],
