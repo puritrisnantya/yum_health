@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yum_health/common/style.dart';
+import 'package:yum_health/data/temporary_data.dart';
+import 'package:yum_health/interface/detail_page.dart';
 
 class ListViewBuilder extends StatelessWidget {
   const ListViewBuilder({Key? key}) : super(key: key);
