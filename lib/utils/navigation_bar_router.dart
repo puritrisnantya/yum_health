@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 class NavigationBarRouter extends StatefulWidget {
@@ -9,7 +10,12 @@ class NavigationBarRouter extends StatefulWidget {
 }
 
 class _NavigationBarRouter extends State<NavigationBarRouter> {
-  final List<Widget> _pages = [];
+  final List<Widget> _pages = [
+    FadeInLeft(child: const HomePage()),
+    FadeInLeft(child: const BMIPage()),
+    FadeInLeft(child: const FavoritePage()),
+    FadeInLeft(child: const ProfilePage())
+  ];
   int _selectedIndex = 0;
 
   @override
