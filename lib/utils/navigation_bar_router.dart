@@ -21,6 +21,7 @@ class _NavigationBarRouter extends State<NavigationBarRouter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex, //New
         onTap: (index) {
