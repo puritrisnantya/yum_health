@@ -46,6 +46,16 @@ class DetailPage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(resep!.title, style: myTextTheme.headline1),
+                        const FavoriteButton()
+                      ],
+                    ),
                   ],
                 ),
               ],
