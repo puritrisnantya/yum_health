@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:yum_health/common/style.dart';
+import 'package:yum_health/interface/favorite_page.dart';
+import 'package:yum_health/interface/home_page.dart';
 
 class NavigationBarRouter extends StatefulWidget {
   const NavigationBarRouter({Key? key}) : super(key: key);
