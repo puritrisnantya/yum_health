@@ -91,6 +91,27 @@ class DetailPage extends StatelessWidget {
                             style: myTextTheme.subtitle1),
                       ),
                     ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      'How to make',
+                      style: myTextTheme.headline5,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Container(
+                      width: size.width,
+                      decoration: const BoxDecoration(
+                        color: Color(0xFFF1F1F1),
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text(resep!.steps, style: myTextTheme.subtitle1),
+                      ),
+                    ),
                   ],
                 ),
               ],
