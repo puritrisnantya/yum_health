@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yum_health/common/style.dart';
+import 'package:yum_health/utils/navigation_bar_router.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -59,7 +60,10 @@ class LandingPage extends StatelessWidget {
                 child: Container(),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(
+                      context, NavigationBarRouter.routeName);
+                },
                 child: Container(
                   child: Text(
                     'Next',
