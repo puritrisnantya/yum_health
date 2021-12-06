@@ -68,6 +68,25 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    const SizedBox(
+                      height: 22,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Popular food',
+                          style: myTextTheme.headline3,
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'see all',
+                            style: myTextTheme.subtitle1,
+                          ),
+                        )
+                      ],
+                    ),
                   ],
                 ),
               ),
