@@ -30,5 +30,7 @@ flutter:
   assets:
     - images/logo.png
     - images/pancake.png
+    - images/avocado.png
+    - images/sushi.jpg
 
 
