@@ -28,6 +28,8 @@ class _NavigationBarRouter extends State<NavigationBarRouter> {
           canvasColor: secondaryColor,
         ),
         child: BottomNavigationBar(
+          unselectedItemColor: primaryColor,
+          selectedItemColor: Colors.white,
           currentIndex: _selectedIndex, //New
           onTap: (index) {
             setState(() {
