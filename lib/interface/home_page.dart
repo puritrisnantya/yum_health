@@ -17,6 +17,13 @@ class HomePage extends StatelessWidget {
                 'Hello, Jisoo',
                 style: myTextTheme.headline2,
               ),
+              const SizedBox(
+                height: 5,
+              ),
+              Text(
+                'Want to eat healthy food?',
+                style: myTextTheme.headline4,
+              ),
             ],
           ),
         ),
