@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:yum_health/common/style.dart';
 import 'package:yum_health/data/temporary_data.dart';
+import 'package:yum_health/widget/favorite_button.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key, required this.resep}) : super(key: key);
@@ -55,6 +57,17 @@ class DetailPage extends StatelessWidget {
                         Text(resep!.title, style: myTextTheme.headline1),
                         const FavoriteButton()
                       ],
+                    ),
+                    Container(
+                      decoration: const BoxDecoration(
+                        color: secondaryColor,
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 5, bottom: 5, left: 15, right: 15),
+                        child: Text(resep!.label, style: myTextTheme.headline6),
+                      ),
                     ),
                   ],
                 ),
