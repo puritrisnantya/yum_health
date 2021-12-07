@@ -1,6 +1,6 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:yum_health/common/style.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:yum_health/interface/favorite_page.dart';
 import 'package:yum_health/interface/home_page.dart';
 
@@ -13,51 +13,66 @@ class NavigationBarRouter extends StatefulWidget {
 }
 
 class _NavigationBarRouter extends State<NavigationBarRouter> {
-  final List<Widget> _pages = [
-    FadeInLeft(child: const HomePage()),
-    FadeInLeft(child: const BMIPage()),
-    FadeInLeft(child: const FavoritePage()),
-    FadeInLeft(child: const ProfilePage())
+  static const List<Widget> _widgetOptions = <Widget>[
+    HomePage(),
+    Center(
+      child: Text('Calculate'),
+    ),
+    FavoritePage(),
+    Center(
+      child: Text('Profile'),
+    ),
   ];
   int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-          canvasColor: secondaryColor,
-        ),
-        child: BottomNavigationBar(
-          unselectedItemColor: primaryColor,
-          selectedItemColor: Colors.white,
-          currentIndex: _selectedIndex, //New
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.accessibility_new),
-              label: 'BMI',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: 'Favorite',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-        ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(color: Colors.white, boxShadow: [
+          BoxShadow(blurRadius: 20.0, color: Colors.black.withOpacity(.1))
+        ]),
+        child: SafeArea(
+            child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+          child: GNav(
+            rippleColor: Colors.grey[300]!,
+            hoverColor: Colors.grey[100]!,
+            gap: 8,
+            activeColor: Colors.black,
+            iconSize: 24,
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            duration: Duration(milliseconds: 400),
+            tabBackgroundColor: Color(0xFFD7FABF),
+            color: Colors.black,
+            tabs: [
+              GButton(
+                icon: LineIcons.home,
+                text: 'Home',
+              ),
+              GButton(
+                icon: LineIcons.calculator,
+                text: 'Calculate',
+              ),
+              GButton(
+                icon: LineIcons.heart,
+                text: 'Favorite',
+              ),
+              GButton(
+                icon: LineIcons.user,
+                text: 'Profile',
+              ),
+            ],
+            selectedIndex: _selectedIndex,
+            onTabChange: (index) {
+              setState(() {
+                _selectedIndex = index;
+              });
+            },
+          ),
+        )),
       ),
+      body: _widgetOptions.elementAt(_selectedIndex),
     );
   }
 
