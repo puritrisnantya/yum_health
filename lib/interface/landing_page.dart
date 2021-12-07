@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yum_health/common/style.dart';
-import 'package:yum_health/utils/navigation_bar_router.dart';
+import 'package:yum_health/interface/sign_in_page.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -61,8 +61,7 @@ class LandingPage extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(
-                      context, NavigationBarRouter.routeName);
+                  Navigator.pushReplacementNamed(context, SignInPage.routeName);
                 },
                 child: Container(
                   child: Text(
