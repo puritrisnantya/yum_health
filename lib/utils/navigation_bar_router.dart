@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:yum_health/interface/calculate_bmi_page.dart';
 import 'package:yum_health/interface/favorite_page.dart';
 import 'package:yum_health/interface/home_page.dart';
+import 'package:yum_health/interface/profile_page.dart';
 
 class NavigationBarRouter extends StatefulWidget {
   const NavigationBarRouter({Key? key}) : super(key: key);
@@ -15,13 +17,9 @@ class NavigationBarRouter extends StatefulWidget {
 class _NavigationBarRouter extends State<NavigationBarRouter> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Center(
-      child: Text('Calculate'),
-    ),
+    CalculatePage(),
     FavoritePage(),
-    Center(
-      child: Text('Profile'),
-    ),
+    ProfilePage(),
   ];
   int _selectedIndex = 0;
 
