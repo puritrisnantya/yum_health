@@ -1,4 +1,5 @@
 class Resep {
+  String id;
   String title;
   String description;
   String imageAsset;
@@ -7,6 +8,7 @@ class Resep {
   String steps;
 
   Resep({
+    required this.id,
     required this.title,
     required this.description,
     required this.imageAsset,
@@ -14,11 +16,34 @@ class Resep {
     required this.ingredients,
     required this.steps,
   });
+
+  factory Resep.fromJson(Map<String, dynamic> json) => Resep(
+        id: json["id"],
+        title: json["title"],
+        description: json["description"],
+        imageAsset: json["imageAsset"],
+        label: json["label"],
+        ingredients: json["ingredients"],
+        steps: json["steps"],
+      );
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'description': description,
+      'imageAsset': imageAsset,
+      'label': label,
+      'ingredients': ingredients,
+      'steps': steps,
+    };
+  }
 }
 
 var resepList = [
   Resep(
-    title: 'Sushi Hiro',
+    id: '1',
+    title: 'Sushi Hiro 1',
     description:
         'Aburi Salmon Spicy, salmonnya fresh, dagingnya empuk dan halus. Enak! Salmon Volcano Roll, ini menu favorit saya, rasanya selalu enak dan must order! Aburi Salmon Belly, ini ....',
     imageAsset: 'images/sushi.jpg',
@@ -29,7 +54,8 @@ var resepList = [
         'Letakkan selembar nori di atas rolling mat, lalu sebarkan nasi di atas nori dan ratakan. Tutupi nasi dengan plastic wrap, tahan nori dengan tangan lalu balik.',
   ),
   Resep(
-    title: 'Sushi Hiro',
+    id: '2',
+    title: 'Sushi Hiro 2',
     description:
         'Aburi Salmon Spicy, salmonnya fresh, dagingnya empuk dan halus. Enak! Salmon Volcano Roll, ini menu favorit saya, rasanya selalu enak dan must order! Aburi Salmon Belly, ini ....',
     imageAsset: 'images/sushi.jpg',
@@ -40,7 +66,8 @@ var resepList = [
         'Letakkan selembar nori di atas rolling mat, lalu sebarkan nasi di atas nori dan ratakan. Tutupi nasi dengan plastic wrap, tahan nori dengan tangan lalu balik.',
   ),
   Resep(
-    title: 'Sushi Hiro',
+    id: '3',
+    title: 'Sushi Hiro 3',
     description:
         'Aburi Salmon Spicy, salmonnya fresh, dagingnya empuk dan halus. Enak! Salmon Volcano Roll, ini menu favorit saya, rasanya selalu enak dan must order! Aburi Salmon Belly, ini ....',
     imageAsset: 'images/sushi.jpg',
