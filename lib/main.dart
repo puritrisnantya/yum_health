@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yum_health/data/temporary_data.dart';
@@ -12,7 +13,9 @@ import 'package:yum_health/provider/favorite_provider.dart';
 import 'package:yum_health/utils/navigation_bar_router.dart';
 import 'common/style.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "814801786932",
+    "project_id": "yumheath",
+    "storage_bucket": "yumheath.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814801786932:android:b0e6d32a4a29d300555261",
+        "android_client_info": {
+          "package_name": "com.example.yum_health"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814801786932-5chi7amfscdjo908a9k53gk5qqbd5m7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyww88k4rVJ2Bqfoc-OUUkQP-YQJKzyDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814801786932-5chi7amfscdjo908a9k53gk5qqbd5m7d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

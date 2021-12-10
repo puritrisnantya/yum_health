@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:yum_health/common/style.dart';
+import 'package:yum_health/interface/sign_in_page.dart';
 
 class ProfilePage extends StatefulWidget {
   static const routeName = '/profile_page';
@@ -10,6 +12,8 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  final _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -74,7 +78,11 @@ class _ProfilePageState extends State<ProfilePage> {
               height: 60.0,
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () async {
+                print('Keluar');
+                await _auth.signOut();
+                Navigator.pushReplacementNamed(context, SignInPage.routeName);
+              },
               child: Container(
                 child: Text(
                   'Keluar',
