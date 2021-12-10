@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:yum_health/common/style.dart';
+import 'package:yum_health/interface/sign_in_page.dart';
 import 'package:yum_health/utils/navigation_bar_router.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -96,7 +97,8 @@ class _SignUpPageState extends State<SignUpPage> {
 
                     await _auth.createUserWithEmailAndPassword(
                         email: email, password: password);
-                    Navigator.pushNamed(context, NavigationBarRouter.routeName);
+                    Navigator.pushReplacementNamed(
+                        context, NavigationBarRouter.routeName);
                   } catch (e) {
                     final snackBar = SnackBar(content: Text(e.toString()));
                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -133,7 +135,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
+                      Navigator.pushReplacementNamed(
+                          context, SignInPage.routeName);
                     },
                     child: Text(
                       'Sign In',
