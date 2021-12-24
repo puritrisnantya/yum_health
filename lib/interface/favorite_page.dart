@@ -26,20 +26,24 @@ class FavoritePage extends StatelessWidget {
               const SizedBox(
                 height: 5,
               ),
-              Consumer<FavoriteProvider>(
-                builder: (context, snapshot, child) {
-                  var state = snapshot.state;
-                  var resep = snapshot.favorite;
-                  if (state == ResultState.loading) {
-                    return const Center(
-                        child: CircularProgressIndicator(color: primaryColor));
-                  } else if (state == ResultState.hasData) {
-                    return ListViewFavorite(resep: resep);
-                  } else {
-                    return Center(
-                        child: Text('Empty', style: myTextTheme.bodyText1));
-                  }
-                },
+              Expanded(
+                child: Consumer<FavoriteProvider>(
+                  builder: (context, snapshot, child) {
+                    var state = snapshot.favoriteState;
+                    if (state == ResultState.loading) {
+                      return const Center(
+                          child:
+                              CircularProgressIndicator(color: primaryColor));
+                    } else if (state == ResultState.hasData) {
+                      var resep = snapshot.listResep;
+                      return ListViewFavorite(
+                          resep: resep, favoriteProvider: snapshot);
+                    } else {
+                      return Center(
+                          child: Text('Empty', style: myTextTheme.bodyText1));
+                    }
+                  },
+                ),
               ),
             ],
           ),
