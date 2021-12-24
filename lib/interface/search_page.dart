@@ -23,6 +23,7 @@ class _SearchPageState extends State<SearchPage> {
     return ChangeNotifierProvider<SearchProvider>(
         create: (context) => SearchProvider(dbService: DatabaseService()),
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           appBar: AppBar(
             backgroundColor: primaryColor,
             title: Text('Search', style: myTextTheme.caption),
