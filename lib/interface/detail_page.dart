@@ -77,7 +77,7 @@ class DetailPage extends StatelessWidget {
                   height: 18,
                 ),
                 Text(
-                  'Ingredients',
+                  'Bahan-bahan',
                   style: myTextTheme.headline5,
                 ),
                 const SizedBox(
@@ -116,7 +116,7 @@ class DetailPage extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  'How to make',
+                  'Langkah',
                   style: myTextTheme.headline5,
                 ),
                 const SizedBox(

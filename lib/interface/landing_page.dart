@@ -39,7 +39,7 @@ class LandingPage extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        'Healthy Foods',
+                        'Makanan Sehat',
                         style: myTextTheme.headline5,
                         textAlign: TextAlign.center,
                       ),
@@ -47,9 +47,9 @@ class LandingPage extends StatelessWidget {
                         height: 5,
                       ),
                       Text(
-                        'Healthy foods are those that provide you with the nutrients you need to sustain your body’s well-being and retain energy. Water, carbohydrates, fat, protein, vitamins, and minerals are the key nutrients that make up a healthy, balanced diet.',
+                        'Makanan sehat adalah makanan yang memberi Anda nutrisi yang Anda butuhkan untuk mempertahankan kesejahteraan tubuh Anda dan mempertahankan energi. Air, karbohidrat, lemak, protein, vitamin, dan mineral adalah nutrisi utama yang membentuk pola makan yang sehat dan seimbang.',
                         style: myTextTheme.bodyText1,
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.justify,
                       ),
                     ],
                   ),
@@ -65,7 +65,7 @@ class LandingPage extends StatelessWidget {
                 },
                 child: Container(
                   child: Text(
-                    'Next',
+                    'Lanjut',
                     textAlign: TextAlign.center,
                     style: myTextTheme.button,
                   ),

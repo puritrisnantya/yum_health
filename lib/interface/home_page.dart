@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
         top: true,
         child: Padding(
           padding:
-              const EdgeInsets.only(top: 10, left: 30, right: 30, bottom: 5),
+              const EdgeInsets.only(top: 20, left: 30, right: 30, bottom: 5),
           child: Column(
             children: [
               Consumer<AuthProvider>(builder: (context, snapshot, child) {
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
                   );
                 } else if (snapshot.state == ResultState.hasData) {
                   return Text(
-                    'Hello, ${snapshot.user.username}',
+                    'Halo, ${snapshot.user.username}',
                     style: myTextTheme.headline2,
                   );
                 } else {
@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                 }
               }),
               Text(
-                'Want to eat healthy food?',
+                'Ingin makan makanan sehat?',
                 style: myTextTheme.headline4,
               ),
               const SizedBox(
@@ -70,11 +70,14 @@ class HomePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Health body comes with good nutrients',
+                              'Kesehatan tubuh datang dengan nutrisi yang baik',
                               style: myTextTheme.headline6,
                             ),
+                            SizedBox(
+                              height: 10,
+                            ),
                             Text(
-                              'Geet goods nutrients now!',
+                              'Dapatkan nutrisi yang bagus sekarang!',
                               style: myTextTheme.subtitle2,
                             ),
                           ],
@@ -91,7 +94,7 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Food Recipes',
+                    'Resep Makanan',
                     style: myTextTheme.headline3,
                   ),
                   IconButton(

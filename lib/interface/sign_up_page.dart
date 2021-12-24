@@ -32,14 +32,14 @@ class _SignUpPageState extends State<SignUpPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Create Your Account',
+                  'Buat akunmu',
                   style: myTextTheme.headline1,
                 ),
                 const SizedBox(
                   height: 5,
                 ),
                 Text(
-                  'Create your account to start journey',
+                  'Buat akun Anda untuk memulai perjalanan',
                   style: myTextTheme.bodyText1,
                 ),
                 const SizedBox(
@@ -52,7 +52,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       focusedBorder: const OutlineInputBorder(),
                       border: const OutlineInputBorder(),
                       isDense: true,
-                      labelText: 'Username',
+                      labelText: 'Nama Pengguna',
                       labelStyle: myTextTheme.bodyText1),
                 ),
                 const SizedBox(
@@ -130,7 +130,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     },
                     child: Container(
                       child: Text(
-                        'Sign up',
+                        'Daftar',
                         textAlign: TextAlign.center,
                         style: myTextTheme.button,
                       ),
@@ -152,7 +152,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already have account? ',
+                      'Sudah punya akun? ',
                       style: myTextTheme.subtitle1,
                     ),
                     GestureDetector(
@@ -161,7 +161,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             context, SignInPage.routeName);
                       },
                       child: const Text(
-                        'Sign In',
+                        'Masuk',
                         style: TextStyle(
                             color: primaryColor, fontWeight: FontWeight.w600),
                       ),

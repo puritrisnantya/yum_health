@@ -24,7 +24,7 @@ class AuthProvider extends ChangeNotifier {
     if (userStatus != null) {
       _isSignIn = userStatus;
       getUserData(authService.auth.currentUser!.uid);
-    }
+    } else {}
   }
 
   Future<String> signUp(String username, String email, String password) async {

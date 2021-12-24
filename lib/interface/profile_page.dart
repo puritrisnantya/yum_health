@@ -29,14 +29,14 @@ class _ProfilePageState extends State<ProfilePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Profile',
+                'Profil',
                 style: myTextTheme.headline1,
               ),
               const SizedBox(
                 height: 20.0,
               ),
               Text(
-                'Username',
+                'Nama Pengguna',
                 style: myTextTheme.headline4,
               ),
               const SizedBox(

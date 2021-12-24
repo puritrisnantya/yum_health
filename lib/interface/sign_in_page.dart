@@ -31,14 +31,14 @@ class _SignInPageState extends State<SignInPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Welcome Back!',
+                  'Selamat Datang kembali!',
                   style: myTextTheme.headline1,
                 ),
                 const SizedBox(
                   height: 5,
                 ),
                 Text(
-                  'Sign in to Backup Your Progress',
+                  'Masuk untuk Mencadangkan Kemajuan Anda',
                   style: myTextTheme.bodyText1,
                 ),
                 const SizedBox(
@@ -90,7 +90,7 @@ class _SignInPageState extends State<SignInPage> {
                   },
                   child: Container(
                     child: Text(
-                      'Sign in',
+                      'Masuk',
                       textAlign: TextAlign.center,
                       style: myTextTheme.button,
                     ),
@@ -111,7 +111,7 @@ class _SignInPageState extends State<SignInPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Don’t have an account? ',
+                      'Tidak punya akun? ',
                       style: myTextTheme.subtitle1,
                     ),
                     GestureDetector(
@@ -120,7 +120,7 @@ class _SignInPageState extends State<SignInPage> {
                             context, SignUpPage.routeName);
                       },
                       child: const Text(
-                        'Sign up',
+                        'Daftar',
                         style: TextStyle(
                             color: primaryColor, fontWeight: FontWeight.w600),
                       ),

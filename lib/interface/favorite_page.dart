@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:yum_health/common/style.dart';
 import 'package:yum_health/helper/state_helper.dart';
@@ -20,7 +21,7 @@ class FavoritePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Favorite food',
+                'Makanan favorit',
                 style: myTextTheme.headline1,
               ),
               const SizedBox(
@@ -40,7 +41,8 @@ class FavoritePage extends StatelessWidget {
                           resep: resep, favoriteProvider: snapshot);
                     } else {
                       return Center(
-                          child: Text('Empty', style: myTextTheme.bodyText1));
+                        child: Lottie.asset('images/empty.json', width: 350),
+                      );
                     }
                   },
                 ),

@@ -25,8 +25,9 @@ class _SearchPageState extends State<SearchPage> {
         child: Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
+            elevation: 0,
             backgroundColor: primaryColor,
-            title: Text('Search', style: myTextTheme.caption),
+            title: Text('Cari', style: myTextTheme.caption),
             leading: IconButton(
               icon: const Icon(
                 Icons.arrow_back,
@@ -48,7 +49,7 @@ class _SearchPageState extends State<SearchPage> {
                     style: myTextTheme.subtitle1,
                     decoration: InputDecoration(
                       prefixIcon: const Icon(Icons.search, color: Colors.grey),
-                      hintText: 'search here...',
+                      hintText: 'Cari di sini...',
                       suffixIcon: IconButton(
                         onPressed: () {
                           _controller.clear();

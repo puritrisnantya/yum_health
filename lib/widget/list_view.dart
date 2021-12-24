@@ -66,7 +66,7 @@ Widget _listItem(BuildContext context, ResepData resep) {
                         style: myTextTheme.headline5,
                       ),
                       const SizedBox(
-                        height: 2,
+                        height: 3,
                       ),
                       Text(
                         resep.description,
