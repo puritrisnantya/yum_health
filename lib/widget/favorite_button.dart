@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:yum_health/data/temporary_data.dart';
 import 'package:yum_health/helper/state_helper.dart';
-import 'package:yum_health/provider/change_favorite_provider.dart';
+import 'package:yum_health/provider/favorite_provider.dart';
 
 class FavoriteButton extends StatelessWidget {
-  const FavoriteButton({Key? key, required this.data}) : super(key: key);
+  const FavoriteButton({Key? key, required this.idResep}) : super(key: key);
 
-  final Resep data;
+  final String idResep;
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ChangeFavoriteProvider>(builder: (context, newData, chill) {
+    return Consumer<FavoriteProvider>(builder: (context, newData, chill) {
       return Container(
         decoration: const BoxDecoration(
           color: Color(0xFFF1F1F1),
@@ -24,7 +23,7 @@ class FavoriteButton extends StatelessWidget {
           ),
           onPressed: () async {
             if (newData.favoriteState == ResultState.noData) {
-              await newData.addFavorite(data);
+              await newData.addFavorite(idResep);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   backgroundColor: Colors.black.withOpacity(0.6),
@@ -36,7 +35,7 @@ class FavoriteButton extends StatelessWidget {
                 ),
               );
             } else {
-              await newData.deleteFavorite();
+              await newData.deleteFavorite(idResep);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   backgroundColor: Colors.black.withOpacity(0.6),
