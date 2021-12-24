@@ -46,7 +46,7 @@ https://drive.google.com/file/d/1Pmy9QAafVDbdzkYGZkz38ff13JD5eEA-/view?usp=shari
 - [hellosehat.com - cara menghitung indeks massa tubuh](https://hellosehat.com/nutrisi/cara-menghitung-indeks-massa-tubuh/)
 - [doktersehat.com - menghitung berat ideal kalkulator bmi](https://doktersehat.com/menghitung-berat-ideal-kalkulator-bmi/)
 - [cnnindonesia.com - cara hitung berat badan ideal](https://www.cnnindonesia.com/gaya-hidup/20211111154723-260-719841/4-cara-hitung-berat-badan-ideal)
-- [lottiefiles.com](https://lottiefiles.com/?gclid=Cj0KCQiA_JWOBhDRARIsANymNOYj8z3JQATeUOHcabK8UGI6tg3_8nW90frOFV33c-J0-CaZ7Rz3_zYaAqNxEALw_wcB
+- [lottiefiles.com](https://lottiefiles.com/?gclid=Cj0KCQiA_JWOBhDRARIsANymNOYj8z3JQATeUOHcabK8UGI6tg3_8nW90frOFV33c-J0-CaZ7Rz3_zYaAqNxEALw_wcB)
 - [doktersehat.com](https://doktersehat.com/)
 - [Flutter Documentation](https://docs.flutter.dev/)
 - [Firebase With Flutter](https://firebase.flutter.dev/docs/overview/)
