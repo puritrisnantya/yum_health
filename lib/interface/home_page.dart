@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:yum_health/common/style.dart';
+import 'package:yum_health/helper/state_helper.dart';
+import 'package:yum_health/interface/search_page.dart';
+import 'package:yum_health/provider/auth_provider.dart';
 import 'package:yum_health/widget/list_view.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,22 +16,32 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         top: true,
         child: Padding(
-          padding: const EdgeInsets.all(30),
+          padding:
+              const EdgeInsets.only(top: 10, left: 30, right: 30, bottom: 5),
           child: Column(
             children: [
-              Text(
-                'Hello, Jisoo',
-                style: myTextTheme.headline2,
-              ),
-              const SizedBox(
-                height: 5,
-              ),
+              Consumer<AuthProvider>(builder: (context, snapshot, child) {
+                if (snapshot.state == ResultState.loading) {
+                  return const Center(
+                    child: CircularProgressIndicator(
+                      color: primaryColor,
+                    ),
+                  );
+                } else if (snapshot.state == ResultState.hasData) {
+                  return Text(
+                    'Hello, ${snapshot.user.username}',
+                    style: myTextTheme.headline2,
+                  );
+                } else {
+                  return const Text('Error');
+                }
+              }),
               Text(
                 'Want to eat healthy food?',
                 style: myTextTheme.headline4,
               ),
               const SizedBox(
-                height: 30,
+                height: 15,
               ),
               Container(
                 decoration: const BoxDecoration(
@@ -59,9 +73,6 @@ class HomePage extends StatelessWidget {
                               'Health body comes with good nutrients',
                               style: myTextTheme.headline6,
                             ),
-                            const SizedBox(
-                              height: 2,
-                            ),
                             Text(
                               'Geet goods nutrients now!',
                               style: myTextTheme.subtitle2,
@@ -74,26 +85,25 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 22,
+                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Popular food',
+                    'Food Recipes',
                     style: myTextTheme.headline3,
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'see all',
-                      style: myTextTheme.subtitle1,
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, SearchPage.routeName);
+                    },
+                    icon: const Icon(
+                      Icons.search,
+                      color: Color(0xFF636363),
                     ),
                   )
                 ],
-              ),
-              const SizedBox(
-                height: 5,
               ),
               const ListViewBuilder(),
             ],
