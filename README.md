@@ -12,7 +12,7 @@ git clone https://github.com/puritrisnantya/yum_health.git
 flutter pub get
 ```
 - Maka hasil clone project telah siap, dan anda dapat run project untuk mencoba menjalankan aplikasi lewat komputer anda
-- Anda dapat menyimak demo video penggunaan aplikasi pada link berikut :
+- Anda dapat menyimak video demo penggunaan(how to use) aplikasi pada link berikut :
 ```
 https://drive.google.com/file/d/1Pmy9QAafVDbdzkYGZkz38ff13JD5eEA-/view?usp=sharing
 ```
@@ -26,7 +26,7 @@ https://drive.google.com/file/d/1Pmy9QAafVDbdzkYGZkz38ff13JD5eEA-/view?usp=shari
 - Menampilkan Profile User
 - Navigation Bar
 
-## Halaman
+## Halaman Aplikasi
 - Splash Screen
 - Landing Page
 - Sign In Page
