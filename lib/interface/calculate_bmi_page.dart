@@ -15,6 +15,13 @@ class _CalculatePageState extends State<CalculatePage> {
   static String _textResult = '';
   static String _textDescription = '';
 
+  @override
+  void dispose() {
+    _heightController.dispose();
+    _weightController.dispose();
+    super.dispose();
+  }
+
   void calculateBMI() {
     setState(() {
       double height = double.parse(_heightController.text) / 100;
@@ -23,22 +30,18 @@ class _CalculatePageState extends State<CalculatePage> {
       double heightSquare = height * height;
       double result = weight / heightSquare;
       if (result < 18.5) {
-        print('Berat Badan Kurang');
         _textResult = 'Berat Badan Kurang';
         _textDescription =
             'Level Status BMI Anda adalah Kurang berat badan. Tingkatkan berat badan ideal Anda dengan berkonsultasi dengan ahli gizi Anda.';
       } else if (result < 22.9) {
-        print('Berat Badan Normal');
         _textResult = 'Berat Badan Normal';
         _textDescription =
             'Level Status BMI Anda adalah Normal. Pertahankan berat badan Anda dengan makanan yang sehat dan berolahraga.';
       } else if (result < 29.9) {
-        print('Kecenderungan Obesitas');
         _textResult = 'Kecenderungan Obesitas';
         _textDescription =
             'Level Status BMI Anda adalah Kelebihan berat badan. Kurangi Berat badan Anda dengan berolahraga dan batasi asupan kalori sesuai anjurkan ahli gizi Anda.';
       } else {
-        print('Obesitas');
         _textResult = 'Obesitas';
         _textDescription =
             'Level Status BMI Anda adalah Obesitas. Kurangi Berat badan Anda dengan berolahraga dan batasi asupan kalori sesuai anjurkan ahli gizi Anda.';
@@ -53,7 +56,7 @@ class _CalculatePageState extends State<CalculatePage> {
       body: SafeArea(
           child: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 30.0, vertical: 30),
+          margin: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -61,7 +64,7 @@ class _CalculatePageState extends State<CalculatePage> {
                 'Kalkulator BMI',
                 style: myTextTheme.headline1,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Text(
@@ -69,33 +72,33 @@ class _CalculatePageState extends State<CalculatePage> {
                 textAlign: TextAlign.justify,
                 style: myTextTheme.bodyText1,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40.0,
               ),
               TextField(
                 controller: _heightController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(),
-                    border: OutlineInputBorder(),
+                    focusedBorder: const OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     isDense: true,
                     labelText: 'Tinggi Badan',
                     labelStyle: myTextTheme.bodyText1),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25.0,
               ),
               TextField(
                 controller: _weightController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(),
-                    border: OutlineInputBorder(),
+                    focusedBorder: const OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     isDense: true,
                     labelText: 'Berat Badan',
                     labelStyle: myTextTheme.bodyText1),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 60.0,
               ),
               TextButton(
@@ -118,18 +121,18 @@ class _CalculatePageState extends State<CalculatePage> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30.0,
               ),
               Center(
                 child: Card(
-                  color: Color(0xFF498D43),
+                  color: const Color(0xFF498D43),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 25.0, vertical: 10.0),
                     child: Text(
                       _textResult == '' ? 'Hasil' : _textResult,
                       style: myTextTheme.headline6,
@@ -137,7 +140,7 @@ class _CalculatePageState extends State<CalculatePage> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30.0,
               ),
               Text(
@@ -145,8 +148,8 @@ class _CalculatePageState extends State<CalculatePage> {
                 style: myTextTheme.headline4,
                 textAlign: TextAlign.justify,
               ),
-              SizedBox(
-                height: 202.0,
+              const SizedBox(
+                height: 20.0,
               ),
             ],
           ),
