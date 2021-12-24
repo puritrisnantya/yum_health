@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:yum_health/common/style.dart';
-import 'package:yum_health/data/temporary_data.dart';
+import 'package:yum_health/data/model/resep_model.dart';
+import 'package:yum_health/helper/state_helper.dart';
 import 'package:yum_health/interface/detail_page.dart';
+import 'package:yum_health/provider/favorite_provider.dart';
+import 'package:yum_health/provider/resep_provider.dart';
 
 class ListViewBuilder extends StatelessWidget {
   const ListViewBuilder({Key? key}) : super(key: key);
@@ -9,18 +13,26 @@ class ListViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.builder(
-          itemCount: resepList.length,
-          itemBuilder: (BuildContext context, int index) {
-            return _listItem(context, resepList[index]);
-          }),
+      child: Consumer<ResepProvider>(builder: (context, snapshot, child) {
+        if (snapshot.state == ResultState.hasData) {
+          return ListView.builder(
+              itemCount: snapshot.listResep.length,
+              itemBuilder: (BuildContext context, int index) {
+                return _listItem(context, snapshot.listResep[index]);
+              });
+        } else {
+          return Container();
+        }
+      }),
     );
   }
 }
 
-Widget _listItem(BuildContext context, Resep resep) {
+Widget _listItem(BuildContext context, ResepData resep) {
   return InkWell(
       onTap: () {
+        Provider.of<FavoriteProvider>(context, listen: false)
+            .getFavoriteById(resep.id);
         Navigator.pushNamed(context, DetailPage.routeName, arguments: resep);
       },
       child: Container(
@@ -34,13 +46,13 @@ Widget _listItem(BuildContext context, Resep resep) {
           child: Row(
             children: [
               Container(
-                height: 108 - 18,
+                height: 90,
                 width: 80,
                 margin: const EdgeInsets.only(bottom: 9, top: 9, left: 9),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                      image: AssetImage(resep.imageAsset), fit: BoxFit.cover),
+                      image: NetworkImage(resep.imageLink), fit: BoxFit.cover),
                 ),
               ),
               Flexible(
@@ -50,7 +62,7 @@ Widget _listItem(BuildContext context, Resep resep) {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        resep.title,
+                        resep.name,
                         style: myTextTheme.headline5,
                       ),
                       const SizedBox(
