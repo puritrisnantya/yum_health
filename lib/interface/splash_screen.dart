@@ -18,15 +18,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   // ignore: must_call_super
   void initState() {
-    Timer(Duration(seconds: 5), () {
+    Timer(const Duration(seconds: 5), () {
       User? user = FirebaseAuth.instance.currentUser;
 
       if (user == null) {
         Navigator.pushNamedAndRemoveUntil(
             context, LandingPage.routeName, (route) => false);
       } else {
-        print(user.email);
-
         Navigator.pushNamedAndRemoveUntil(
             context, NavigationBarRouter.routeName, (route) => false);
       }
@@ -41,8 +39,8 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Container(
           width: 100,
           height: 100,
-          margin: EdgeInsets.only(bottom: 50),
-          decoration: BoxDecoration(
+          margin: const EdgeInsets.only(bottom: 50),
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
                 'images/logo.png',
